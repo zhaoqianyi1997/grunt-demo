@@ -1,15 +1,21 @@
-module.exports=function(grunt){
-
+module.exports = function (grunt) {
   grunt.initConfig({
-  
-    sprite:{
-      all: {
-        src: './images/*.png',
-        dest: 'dist/all.png',
-        destCss: 'dist/sprites.css'                                                              
-      }          
+    uglify: {
+      release:{
+        files: {
+           'dist/reactangle.js':['./reactangle.js'] ,
+           'dist/calc.js':['./calc.js']
+            
+        }
+                     
+      }       
+                  
     }
+              
   });
-  grunt.loadNpmTasks('grunt-spritesmith');
-  grunt.registerTask('default',['sprite']);
-}
+
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+      grunt.registerTask('default', ['uglify']);
+
+};

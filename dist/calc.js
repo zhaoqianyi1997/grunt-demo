@@ -1,0 +1,1 @@
+function reactangle(){return{perimeter:function(r,e){return s*(Number(r)+Number(e))},area:function(r,e){return Number(r)*Number(e)}}}
