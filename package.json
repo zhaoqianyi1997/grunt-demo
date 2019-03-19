@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "chai": "^4.2.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-csslint": "^2.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-htmlmin": "^3.0.0",
     "grunt-contrib-imagemin": "^3.1.0",
     "grunt-contrib-less": "^2.0.0",
@@ -15,11 +15,12 @@
     "grunt-htmlhint": "^0.9.13",
     "grunt-mocha-cli": "^4.0.0",
     "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-spritesmith": "^6.6.3",
     "istanbul": "^0.4.5"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
-    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^3.0.0",
     "mocha": "^6.0.2"
   },
   "scripts": {

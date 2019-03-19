@@ -1,20 +1,22 @@
-module.exports=function(grunt){
-
+module.exports = function (grunt) {
   grunt.initConfig({
-    concat: {
-      options: {
-              separator: ';',
-      
-      },
-      dist: {
-          src: ['reactangle.js', 'calc.js', ],
-        dest: 'dist/bundle.js',
-      
-     },
-    
-    },
+        cssmin: {  
+          options:{
+            mergeIntoShorthands:false,
+            roundingPrecision:-1
+          },
+          target:{
+            files:{
+              'dist/reactangle.css':['./reactangle.css']
+            }
 
+  }
+        }
+                  
   });
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.registerTask('default',['concat']);
-}
+
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+      grunt.registerTask('default', ['cssmin']); 
+
+};
