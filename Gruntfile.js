@@ -1,28 +1,20 @@
-module.exports = function (grunt) {
+module.exports=function(grunt){
+
   grunt.initConfig({
-    run: {
-      api: {
-                options: { wait: false  },
-          args: ['./app.js']
-          
-      }
-               
-    },
-  mochacli: {
-    options: {
-              reporter: 'spec',
-          bail: true
-          
-    },
-          all: ['test/*.js']
-                           
-  }
+    concat: {
+      options: {
+              separator: ';',
+      
+      },
+      dist: {
+          src: ['reactangle.js', 'calc.js', ],
+        dest: 'dist/bundle.js',
+      
+     },
     
+    },
+
   });
-
-    grunt.loadNpmTasks('grunt-run');
-    grunt.loadNpmTasks('grunt-mocha-cli');
-
-    grunt.registerTask('default', ['run', 'mochacli', 'stop:api']);
-
-};
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.registerTask('default',['concat']);
+}
