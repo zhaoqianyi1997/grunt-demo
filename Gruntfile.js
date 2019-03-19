@@ -1,28 +1,20 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-     
-    htmlmin: {    
-      dev:{
-        options:{
-          collapseWhitespace:true,
-          preserveLineBreaks:false
-        },
-      
-      files: {
-           'dist/index.html': './index.html'
-          
-      }
-    }
-    
-   }
+        imagemin: {     
+          dynamic:{
+            files:[{
+              expand:true,
+              cwd:'./images',
+              src:['**/*.{png,jpg,gif}'],
+              dest:'dist/'
+            }]
+          }
+        }
+                
   });
 
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-      grunt.registerTask('default', ['htmlmin']);
+      grunt.registerTask('default', ['imagemin']);    
 
 };
-
-                            
-
-  
