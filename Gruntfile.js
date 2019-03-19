@@ -1,22 +1,20 @@
-module.exports = function (grunt) {
-  grunt.initConfig({
-        cssmin: {  
-          options:{
-            mergeIntoShorthands:false,
-            roundingPrecision:-1
-          },
-          target:{
-            files:{
-              'dist/reactangle.css':['./reactangle.css']
-            }
 
-  }
-        }
-                  
+module.exports = function(grunt) {
+  grunt.initConfig({
+    csslint: {
+      options: {
+                csslintrc: '.csslintrc'
+          
+      },
+        src: ['rectangle.css']
+        
+    }
+               
   });
 
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
 
-      grunt.registerTask('default', ['cssmin']); 
+      grunt.registerTask('default', ['csslint']);
 
 };
+
